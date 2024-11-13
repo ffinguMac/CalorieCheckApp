@@ -8,15 +8,20 @@
     tools:ignore="ExtraText">
 
     <!-- 앱 로고 -->
-    <ImageView
-        android:id="@+id/logoImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
-        android:contentDescription="App Logo" />
 
     <!-- 앱 이름 -->
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="App Logo"
+        android:src="@drawable/logo" />
+
     <TextView
         android:id="@+id/appTitleTextView"
         android:layout_width="wrap_content"
@@ -30,21 +35,21 @@
         android:layout_marginTop="16dp" />
 
     <!-- 앱 설명 -->
+
+    <!-- 시작 버튼 -->
     <TextView
         android:id="@+id/appDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take a picture of your food and get calorie information instantly!"
-        android:textSize="16sp"
-        android:textColor="#666666"
         android:layout_below="@id/appTitleTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="19dp"
+        android:gravity="center"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:gravity="center" />
+        android:text="Take a picture of your food and get calorie information instantly!"
+        android:textColor="#666666"
+        android:textSize="16sp" />
 
-    <!-- 시작 버튼 -->
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
