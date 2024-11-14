@@ -18,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // 다음 화면으로 이동하는 인텐트 작성
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class); // NextActivity는 다음 화면의 액티비티
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

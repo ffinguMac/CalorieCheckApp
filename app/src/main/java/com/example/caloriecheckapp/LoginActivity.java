@@ -1,5 +1,6 @@
 package com.example.caloriecheckapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
 
         // 로그인 버튼 클릭 시 이벤트
         findViewById(R.id.loginButton).setOnClickListener(new View.OnClickListener() {
@@ -24,12 +25,18 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailField.getText().toString();
                 String password = passwordField.getText().toString();
 
-                // 간단한 검증 예제
+                // 로그인 검증
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
+                } else if (email.equals("admin") && password.equals("1234")) {
+                    // 로그인 성공 시 UserInfoActivity로 이동
+                    Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, UserInfoActivity.class);
+                    startActivity(intent);
+                    finish(); // 현재 액티비티 종료
                 } else {
-                    // 로그인 처리 로직 추가 예정
-                    Toast.makeText(LoginActivity.this, "Logging in...", Toast.LENGTH_SHORT).show();
+                    // 로그인 실패 메시지
+                    Toast.makeText(LoginActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
                 }
             }
         });
